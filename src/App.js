@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 import Loading from './components/Loading';
-const Lady = lazy(() => import('./components/Lady'));
+const Goal = lazy(() => import('./components/Goal'));
 const CountdownTimer = lazy(() => import('./components/CountdownTimer'));
 import styled from 'styled-components';
 import { useCountdown } from './hooks';
@@ -53,7 +53,7 @@ const StyledBody = styled.section`
 `;
 const noSleep = new NoSleep();
 const App = () => {
-  const { counting, leftSeconds, totalSeconds, startCountdown } = useCountdown(60 * 10);
+  const { counting, leftSeconds, totalSeconds, startCountdown } = useCountdown(40);
   const handleStart = () => {
     startCountdown();
     noSleep.enable();
@@ -62,7 +62,10 @@ const App = () => {
     <Suspense fallback={<Loading />}>
       <StyledBody>
         {counting && <CountdownTimer seconds={leftSeconds}></CountdownTimer>}
-        <Lady percent={leftSeconds / totalSeconds}></Lady>
+        <Goal
+          grayPercent={leftSeconds < 10 ? leftSeconds / 10 : 1}
+          blurPercent={counting ? (leftSeconds - 10 < 0 ? 0 : leftSeconds - 10) / totalSeconds : 0}
+        ></Goal>
         {!counting && (
           <button className="startBtn" onClick={handleStart}>
             start

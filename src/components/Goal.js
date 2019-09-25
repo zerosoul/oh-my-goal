@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LadyImg from '../assets/img/lady.1.jpg';
+import LadyImg from '../assets/img/xg.png';
 const Wrapper = styled.section`
   height: 100%;
   background: url(${LadyImg});
@@ -11,8 +11,10 @@ const Wrapper = styled.section`
   /* filter: blur(100px); */
 `;
 const BaseBlurLen = 100;
-export default function Lady({ percent = 1 }) {
+export default function Goal({ blurPercent = 1, grayPercent = 1 }) {
   return (
-    <Wrapper style={{ filter: `blur(${BaseBlurLen * percent}px) grayscale(${percent})` }}></Wrapper>
+    <Wrapper
+      style={{ filter: `blur(${BaseBlurLen * blurPercent}px) grayscale(${grayPercent})` }}
+    ></Wrapper>
   );
 }

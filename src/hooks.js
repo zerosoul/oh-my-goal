@@ -17,8 +17,9 @@ const useCountdown = (totalSeconds = 60 * 30) => {
           if (preSecond <= 1) {
             setTiming(false);
             clearInterval(interval);
+
             // 重置秒数
-            return 0;
+            return total;
           } else {
             return preSecond - 1;
           }
@@ -26,7 +27,7 @@ const useCountdown = (totalSeconds = 60 * 30) => {
       }, 1000);
     }
     return () => clearInterval(interval);
-  }, [timing]);
+  }, [timing, total]);
   const startCountdown = () => {
     setTiming(true);
   };
