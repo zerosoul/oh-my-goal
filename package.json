@@ -1,7 +1,7 @@
 {
-  "name": "react-starter",
+  "name": "oh-my-lady",
   "version": "1.0.0",
-  "description": "React webapp starter",
+  "description": "Keeping fit to get your lady",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zerosoul/react-starter.git"
+    "url": "git+https://github.com/zerosoul/oh-my-lady.git"
   },
   "keywords": [
     "css3",
@@ -25,10 +25,11 @@
   "author": "tristan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/zerosoul/react-starter/issues"
+    "url": "https://github.com/zerosoul/oh-my-lady/issues"
   },
-  "homepage": "https://zerosoul.github.io/react-starter",
+  "homepage": "https://zerosoul.github.io/oh-my-lady",
   "dependencies": {
+    "nosleep.js": "^0.9.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "styled-components": "^4.3.2",
