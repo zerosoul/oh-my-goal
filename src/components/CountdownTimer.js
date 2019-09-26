@@ -1,5 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+const Floating = keyframes`
+ 0% { transform:translateX(-50%) translateY(0) }
+
+ 50% { transform: translateX(-50%) translateY(20px) }
+ 100% { transform: translateX(-50%) translateY(0) }
+
+`;
 const Wrapper = styled.aside`
   color: #fff;
   background: rgba(22, 22, 22, 0.6);
@@ -13,6 +20,8 @@ const Wrapper = styled.aside`
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  letter-spacing: 0.4rem;
+  animation: ${Floating} 5s ease-in-out infinite;
   .split {
     padding: 0 0.4rem;
   }

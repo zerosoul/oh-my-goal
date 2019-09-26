@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
+import Girl from './assets/img/lady.1.jpg';
+import Boy from './assets/img/man.1.jpg';
+import XG from './assets/img/xg.png';
+
 // const COUNTDOWN_SECONDS = 60 * 30;
-const useCountdown = (totalSeconds = 60 * 30) => {
+const DefaultDuration = 60 * 5;
+const useCountdown = (totalSeconds = DefaultDuration) => {
+  const [finished, setFinished] = useState(false);
+  // 总计时
   const [total, setTotal] = useState(totalSeconds);
   // 计时中标识
   const [timing, setTiming] = useState(false);
@@ -15,6 +22,7 @@ const useCountdown = (totalSeconds = 60 * 30) => {
       interval = setInterval(() => {
         setSecond(preSecond => {
           if (preSecond <= 1) {
+            setFinished(true);
             setTiming(false);
             clearInterval(interval);
 
@@ -29,7 +37,12 @@ const useCountdown = (totalSeconds = 60 * 30) => {
     return () => clearInterval(interval);
   }, [timing, total]);
   const startCountdown = () => {
+    setSecond(total);
+    setFinished(false);
     setTiming(true);
+  };
+  const reset = () => {
+    setFinished(false);
   };
 
   return {
@@ -37,8 +50,18 @@ const useCountdown = (totalSeconds = 60 * 30) => {
     leftSeconds: second,
     totalSeconds: total,
     setTotalSeconds: setTotal,
+    finished,
+    reset,
     startCountdown
   };
 };
-
-export { useCountdown };
+const useGoal = () => {
+  const Goals = {
+    man: Boy,
+    girl: Girl,
+    xg: XG
+  };
+  const [image, setImage] = useState('xg');
+  return { keyVal: image, image: Goals[image], changeGoal: setImage };
+};
+export { useCountdown, useGoal };
