@@ -1,18 +1,16 @@
 import React, { lazy, Suspense } from 'react';
 import styled from 'styled-components';
-import NoSleep from 'nosleep.js';
 import Loading from './components/Loading';
 import { useCountdown, useGoal } from './hooks';
 import FullView from './components/FullView';
-import DurationSelect from './components/DurationSelect';
 import Goal from './components/Goal';
+import CountdownTimer from './components/CountdownTimer';
+const DurationSelect = lazy(() => import('./components/DurationSelect'));
 const GoalSelect = lazy(() => import('./components/GoalSelect'));
 const StartButton = lazy(() => import('./components/StartButton'));
-const CountdownTimer = lazy(() => import('./components/CountdownTimer'));
 const StyledBody = styled.section`
   height: 100vh;
 `;
-const noSleep = new NoSleep();
 const StartGrayTime = 5;
 const App = () => {
   const {
@@ -27,10 +25,8 @@ const App = () => {
   const { keyVal, image, changeGoal } = useGoal();
   const handleStart = () => {
     startCountdown();
-    noSleep.enable();
   };
-  // let grayCountingVal=leftSeconds < StartGrayTime ? leftSeconds / StartGrayTime : 1;
-  // let blurCountingVal=
+
   return (
     <Suspense fallback={<Loading />}>
       <StyledBody>

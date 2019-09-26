@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
+import NoSleep from 'nosleep.js';
+
 import Girl from './assets/img/lady.1.jpg';
 import Boy from './assets/img/man.1.jpg';
 import XG from './assets/img/xg.png';
+const noSleep = new NoSleep();
 
 // const COUNTDOWN_SECONDS = 60 * 30;
 const DefaultDuration = 60 * 5;
@@ -40,9 +43,11 @@ const useCountdown = (totalSeconds = DefaultDuration) => {
     setSecond(total);
     setFinished(false);
     setTiming(true);
+    noSleep.enable();
   };
   const reset = () => {
     setFinished(false);
+    noSleep.disable();
   };
 
   return {
