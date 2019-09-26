@@ -4,8 +4,9 @@ import CloseButton from './CloseButton';
 const Blur = keyframes`
  0% { filter: blur(10px); }
   50% { filter: blur(5px); }
-  100% { filter: blur(0); }
-`;
+  100% { filter: blur(0); transform: rotate(4deg); }
+
+  `;
 
 const BounceInDown = keyframes`
 from,
@@ -51,8 +52,8 @@ const Wrapper = styled.section`
   align-items: center;
   margin: 0 auto;
   animation: ${BounceInDown} 1s;
-  /* background: rgba(255, 255, 255, 0.6); */
   img {
+    border: 2px solid #fff;
     filter: blur(10px);
     width: 96%;
     animation: ${Blur} 1.4s forwards;
