@@ -18,8 +18,8 @@ const StyledButton = styled.button`
   transition: background-color 0.6s ease;
   overflow: hidden;
   font-weight: bold;
+  border: none;
   border-radius: 0.8rem;
-
   cursor: pointer;
   &:after {
     content: '';

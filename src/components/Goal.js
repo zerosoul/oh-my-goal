@@ -1,17 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import LadyImg from '../assets/img/xg.png';
 const Wrapper = styled.section`
   height: 100%;
-  /* background: url(${LadyImg}); */
   color: #fff;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* filter: blur(100px); */
   transition: filter 0.4s ease-in;
 `;
-const BaseBlurLen = 100;
+const BaseBlurLen = 50;
 export default function Goal({ image, blurPercent = 1, grayPercent = 1 }) {
   return (
     <Wrapper
