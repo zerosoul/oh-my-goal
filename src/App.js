@@ -5,9 +5,9 @@ import Loading from './components/Loading';
 import { useCountdown, useGoal } from './hooks';
 import FullView from './components/FullView';
 import DurationSelect from './components/DurationSelect';
+import Goal from './components/Goal';
 const GoalSelect = lazy(() => import('./components/GoalSelect'));
 const StartButton = lazy(() => import('./components/StartButton'));
-const Goal = lazy(() => import('./components/Goal'));
 const CountdownTimer = lazy(() => import('./components/CountdownTimer'));
 const StyledBody = styled.section`
   height: 100vh;
