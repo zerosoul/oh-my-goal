@@ -8,7 +8,7 @@ const Wrapper = styled.section`
   background-repeat: no-repeat;
   transition: filter 0.4s ease-in;
 `;
-const BaseBlurLen = 50;
+const BaseBlurLen = 40;
 export default function Goal({ image, blurPercent = 1, grayPercent = 1 }) {
   return (
     <Wrapper

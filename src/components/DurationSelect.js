@@ -17,7 +17,7 @@ const Wrapper = styled.aside`
   }
 `;
 
-const Durations = [
+export const Durations = [
   {
     dur: 5 * 60,
     title: '5分钟'

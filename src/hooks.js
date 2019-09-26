@@ -7,7 +7,7 @@ import XG from './assets/img/xg.png';
 const noSleep = new NoSleep();
 
 // const COUNTDOWN_SECONDS = 60 * 30;
-const DefaultDuration = 60 * 5;
+const DefaultDuration = 10;
 const useCountdown = (totalSeconds = DefaultDuration) => {
   const [finished, setFinished] = useState(false);
   // 总计时
