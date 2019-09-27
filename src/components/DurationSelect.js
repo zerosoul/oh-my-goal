@@ -16,8 +16,8 @@ const Wrapper = styled.aside`
     padding-bottom: 0.8rem;
   }
 `;
-
-export const Durations = [
+let params = new URLSearchParams(location.search);
+const Durations = [
   {
     dur: 5 * 60,
     title: '5分钟'
@@ -39,6 +39,15 @@ export const Durations = [
     title: '30分钟'
   }
 ];
+if (params.get('dur')) {
+  let dur = Number(params.get('dur'));
+  let title = `${dur}秒`;
+
+  Durations.unshift({
+    dur,
+    title
+  });
+}
 
 export default function DurationSelect({ duration, changeDuration }) {
   return (
@@ -60,3 +69,4 @@ export default function DurationSelect({ duration, changeDuration }) {
     </Wrapper>
   );
 }
+export { Durations };

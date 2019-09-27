@@ -31,7 +31,9 @@ const App = () => {
     <Suspense fallback={<Loading />}>
       <StyledBody>
         {finished && <FullView image={image} closeView={reset} />}
-        {!counting && <GoalSelect keyVal={keyVal} changeGoal={changeGoal}></GoalSelect>}
+        {!counting && !finished && (
+          <GoalSelect keyVal={keyVal} changeGoal={changeGoal}></GoalSelect>
+        )}
         {counting && <CountdownTimer seconds={leftSeconds}></CountdownTimer>}
         <Goal
           image={image}
