@@ -23,7 +23,7 @@ const useCountdown = (totalSeconds = DefaultDuration) => {
     // 开始倒计时
     if (timing) {
       interval = setInterval(() => {
-        setSecond(preSecond => {
+        setSecond((preSecond) => {
           if (preSecond <= 1) {
             setFinished(true);
             setTiming(false);
@@ -57,14 +57,14 @@ const useCountdown = (totalSeconds = DefaultDuration) => {
     setTotalSeconds: setTotal,
     finished,
     reset,
-    startCountdown
+    startCountdown,
   };
 };
 const useGoal = () => {
   const Goals = {
     man: Boy,
     girl: Girl,
-    xg: XG
+    xg: XG,
   };
   const [image, setImage] = useState('xg');
   return { keyVal: image, image: Goals[image], changeGoal: setImage };

@@ -46,7 +46,7 @@ const Wrapper = styled.section`
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,8 @@ const Wrapper = styled.section`
   img {
     border: 2px solid #fff;
     filter: blur(10px);
-    width: 96%;
+    width: auto;
+    height: 100%;
     animation: ${Blur} 1.4s forwards;
     animation-delay: 1s;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),

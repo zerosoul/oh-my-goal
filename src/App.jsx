@@ -13,15 +13,8 @@ const StyledBody = styled.section`
 `;
 const StartGrayTime = 5;
 const App = () => {
-  const {
-    counting,
-    reset,
-    finished,
-    leftSeconds,
-    totalSeconds,
-    startCountdown,
-    setTotalSeconds
-  } = useCountdown(process.env.NODE_ENV == 'production' ? Durations[0].dur : 10);
+  const { counting, reset, finished, leftSeconds, totalSeconds, startCountdown, setTotalSeconds } =
+    useCountdown(import.meta.env.PROD ? Durations[0].dur : 10);
   const { keyVal, image, changeGoal } = useGoal();
   const handleStart = () => {
     startCountdown();
