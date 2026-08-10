@@ -1,3 +1,5 @@
+
+
 # Oh My Goal
 
 [Oh My Goal](https://works.yangerxiao.com/oh-my-goal/)
@@ -10,3 +12,12 @@
 ![demo 1](demo/demo1.jpg)
 
 ![demo 2](demo/demo2.jpg)
+
+## Usage
+
+```bash
+npm install
+npm run dev   # Start dev server (port 3006)
+npm run build # Build for production
+npm run serve # Preview production build
+```
